@@ -1,1 +1,9 @@
+UNIT TESTS:
+Application code usually lives the in src folder for Angular projects. 
+In the src folder should be an app folder – which contains core logic, services, components, directives, pipes and models.
 
+Components that could use Unit Tests include:
+    calculator.service.ts 
+    message.service.ts 
+    app.module.ts   (Disable button when there is no answer )
+    app.component.ts  (??)
