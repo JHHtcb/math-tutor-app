@@ -1,7 +1,6 @@
 Testing Plan
 E2E Test.  Happy Path:
-1. 1. Page opens successfully
-Page content is as expected:  Includes “Math Challenge”, “Addition” and “Answer”
+1. Page opens successfully
 2. Enter the correct answer (adding the two numbers)
 3. The Answer button is now selectable.
 4. Select the “Answer” button.
@@ -10,20 +9,23 @@ Page content is as expected:  Includes “Math Challenge”, “Addition” and 
 7. New numbers are presented for a new challenge.
 8. The answer field has been cleared
 9. The Answer button is no longer enabled.
-	Improvements to the happy path
+
+
+Improvements to the Happy Path
 add screen shots showing the value being entered
+
 Additional Functional Tests – that can be incorporated into the E2E automation workflow:
-Verify that every number character can be entered, including the decimal point enabling the Answer button to be selectable. (0,2,3,4,5,6,7,8,9, “.”)
-Verify only real(?) numbers can be entered into the answer field
-E.G.  99999999, 0, 0.9999999, +5555, -5555
-Verify that if a character(s) that can be entered is not a number, the Answer button is not enabled (“e”, “2+4”, “5-3”)  [even if the math equation entered yields the correct answer)
-Verify that the characters entered can be cleared out by the user (either with the delete button or the backspace button)
-This should be the case before the 'Answer' button is selected and when a wrong answer is submitted
-Verify that the popup showing the answer is correct or it is not correct auto closes within 7 seconds.
-Verify that the popup showing the answer is correct or it is not correct can be closed by selecting the “X” within 5 seconds of it appearing.
+-Verify that every number character can be entered, including the decimal point enabling the Answer button to be selectable. (0,2,3,4,5,6,7,8,9, “.”)
+-Verify only real(?) numbers can be entered into the answer field
+    E.G.  99999999, 0, 0.9999999, +5555, -5555
+-Verify that if a character(s) that can be entered is not a number, the Answer button is not enabled (“e”, “2+4”, “5-3”)  [even if the math equation entered yields the correct answer)
+-Verify that the characters entered can be cleared out by the user (either with the delete button or the backspace button)
+    This should be the case before the 'Answer' button is selected and when a wrong answer is submitted
+-Verify that the popup showing the answer is correct or it is not correct auto closes within 7 seconds.
+-Verify that the popup showing the answer is correct or it is not correct can be closed by selecting the “X” within 5 seconds of it appearing.
 
 Non-Functional Tests:
-Compatibility:  Verify the happy path test functions across different browsers (Windows: Chrome, Edge, Firefox and Mac: Safari)
-508:  Check for section 508 accessibility.  E.G. ability to use only the keyboard.
-Stess:  Add an extremely lengthy value as the answer.
-Response time.  Measure how quickly the page responds to each click.
+-Compatibility:  Verify the happy path test functions across different browsers (Windows: Chrome, Edge, Firefox and Mac: Safari)
+-508:  Check for section 508 accessibility.  E.G. ability to use only the keyboard.
+-Stess:  Add an extremely lengthy value as the answer.
+-Response time.  Measure how quickly the page responds to each click.
