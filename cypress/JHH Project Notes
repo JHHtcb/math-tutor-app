@@ -1,1 +1,81 @@
+Project Notes
 
+
+The application is titled “math-tutor-app” and is located at:
+https://github.com/OneCause/math-tutor-app
+
+Pre-requisites:
+Windows
+Node Version 18.20.3 or higher
+JHH's laptop:
+  node -v	=	v.22.14.0  
+  npm -v	=	10.9.2  
+
+To run this angular application on my local system:
+1. Verify Node.js is installed
+2. Install the Angular CLI
+      npm install -g @angular/cli
+3. Clone the Git Repository
+      git clone https://github.com/OneCause/math-tutor-app
+4. Navigate to the Project Folder
+      cd math-tutor-app
+5. Install the Project Dependencies
+      npm install
+6. Start the Application
+      ng serve
+7. Open browser and go to:
+      http://localhost:4200/   ===> will see the application!
+
+To open Cypress:
+From C:\Users\johnh\math-tutor-app>
+	  npx cypress open
+	This get cypress up ==> then get the browser up and running for E2E testing/dev 
+
+To open Visual Studio Code
+From C:\Users\johnh\math-tutor-app>
+	  npx cypress open
+	This opens Visual Studio Code with MATH-TUTOR-APP open
+
+
+Cypress Test Development Information
+To get the prewritten test case "math-app.cy.js" working:
+The element locators for the 2 random numbers are Xpath.
+To address:
+The Cypress Xpath plugin is needed.
+	Run in the terminal:  npm install -D cypress-xpath
+Add the following to the Cypress support file: “cypress/support/e2e.js ”
+	require('cypress-xpath');
+
+For readability and ease in usability, use aliases for these random numbers:
+	Add:
+		cy.get('@first-value').invoke('text').then(text => {
+  			cy.log('First value:', text);
+		});
+
+		cy.get('@second-value').invoke('text').then(text => {
+  			cy.log('Second value:', text);
+		});
+
+The selector for the “Answer” button requires updating so that the element can be found.
+	Use the following:  cy.contains('span.mdc-button__label', 'Answer')  
+
+Before the “Answer” button can be clickable, a value must entered into the Answer field.
+Extract the values and calculate the total:
+	    cy.get('@first-value').invoke('text').then(firstText => {
+      cy.get('@second-value').invoke('text').then(secondText => {
+        const first = parseInt(firstText.trim());
+        const second = parseInt(secondText.trim());
+        const total = first + second;
+
+        cy.log(`First: ${first}, Second: ${second}, Total: ${total}`);
+
+Type the summed value as input – appears to be a bypass overlap issue so the typing will be forced.
+        cy.get('input[type="number"]')
+          .clear({ force: true })   // Clear any existing value
+          .type(`${total}`, { force: true });  // Enter the sum
+
+Now click on the “Answer” button now that is enabled.
+        cy.contains('button', 'Answer')
+          .should('not.be.disabled')
+          .click();
+So now...  the test can be run and it passes.  This test can be enhanced upon, such as adding an assertion or success check for the popup that says “That's right! Try another one.”
