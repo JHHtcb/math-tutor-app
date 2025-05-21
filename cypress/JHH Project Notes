@@ -1,44 +1,43 @@
 Project Notes
 
-
 The application is titled “math-tutor-app” and is located at:
 https://github.com/OneCause/math-tutor-app
 
-Pre-requisites:
-Windows
-Node Version 18.20.3 or higher
-JHH's laptop:
-  node -v	=	v.22.14.0  
-  npm -v	=	10.9.2  
+Pre-requisites (see README for full listing)
+  Windows
+  Node Version 18.20.3 or higher
+
+      JHH's laptop:
+        node -v	=	v.22.14.0  
+        npm -v	=	10.9.2  
 
 To open the MathTutorAppTo run this angular application on my local system - using Command Prompt:
-1. Verify Node.js is installed (Version 18.20.3 or higher)
-2. Install the Angular CLI
-      npm install -g @angular/cli
-3. Clone the Git Repository
-      git clone https://github.com/OneCause/math-tutor-app
-4. Navigate to the Project Folder on my system where repo was saved to
-      cd math-tutor-app
-5. Install the Project Dependencies
-      npm install
-6. Start the Application
-      ng serve
-7. Open browser and go to:
-      http://localhost:4200/   ===> will see the application!
+  1. Verify Node.js is installed (Version 18.20.3 or higher)
+  2. Install the Angular CLI
+        npm install -g @angular/cli
+  3. Clone the Git Repository
+        git clone https://github.com/OneCause/math-tutor-app
+  4. Navigate to the Project Folder on my system where repo was saved to
+        cd math-tutor-app
+  5. Install the Project Dependencies
+        npm install
+  6. Start the Application
+        ng serve
+  7. Open browser and go to:
+        http://localhost:4200/   ===> will see the application!
 
 To open Cypress  - using Command Prompt:
-From C:\Users\johnh\math-tutor-app>  
-	  npx cypress open
-	This gets cypress up
+  From C:\Users\johnh\math-tutor-app>  
+  	  npx cypress open
+  	This gets cypress up
 
 To open Visual Studio Code
-From C:\Users\johnh\math-tutor-app>
-	  npx cypress open
-	This opens Visual Studio Code with MATH-TUTOR-APP open
+  From C:\Users\johnh\math-tutor-app>
+  	  npx cypress open
+  	This opens Visual Studio Code with MATH-TUTOR-APP open
 
 
-Cypress Test Development Information
-To get the prewritten test case "math-app.cy.js" working:
+JHH NOTES - when working through creation of the e2e happy path, having started wit hthe preloaded test case "math-app.cy.js":
 The element locators for the 2 random numbers are Xpath.
 To address:
 The Cypress Xpath plugin is needed.
@@ -78,4 +77,4 @@ Now click on the “Answer” button now that is enabled.
         cy.contains('button', 'Answer')
           .should('not.be.disabled')
           .click();
-So now...  the test can be run and it passes.  This test can be enhanced upon, such as adding an assertion or success check for the popup that says “That's right! Try another one.”
+So now...  the test can be run and it passes.  This test will now be enhanced upon per the e2e Happy Path Test Plan.
