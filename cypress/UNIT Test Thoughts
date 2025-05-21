@@ -11,3 +11,15 @@ Components that could use Unit Tests include:
 
 ## Running unit tests
     Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+Spec List
+  CalculatorService
+      should be created
+  AppComponent
+      should render title
+      should create the app
+      should have as title 'math-tutor-app'
+  MessageService
+      should be created
+
+Currently (5/20/25) 4 of these 5 unit tests are failing
