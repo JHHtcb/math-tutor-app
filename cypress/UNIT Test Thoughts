@@ -7,3 +7,7 @@ Components that could use Unit Tests include:
     message.service.ts 
     app.module.ts   (Disable button when there is no answer )
     app.component.ts  (??)
+
+
+## Running unit tests
+    Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
