@@ -22,7 +22,7 @@ Additional Functional Tests – that can be incorporated into the E2E automation
 -Verify that the characters entered can be cleared out by the user (either with the delete button or the backspace button)
     This should be the case before the 'Answer' button is selected and when a wrong answer is submitted
 -Verify that the popup showing the answer is correct or it is not correct auto closes within 7 seconds.
--Verify that the popup showing the answer is correct or it is not correct can be closed by selecting the “X” within 5 seconds of it appearing.
+-Verify that the popup showing the answer is correct or it is not correct can be closed by clicking in it within 5 seconds of it appearing.
 
 Non-Functional Tests:
 -Compatibility:  Verify the happy path test functions across different browsers (Windows: Chrome, Edge, Firefox and Mac: Safari)
