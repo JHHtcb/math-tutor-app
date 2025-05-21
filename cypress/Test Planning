@@ -1,31 +1,42 @@
-Testing Plan
-E2E Test.  Happy Path:
-1. Page opens successfully
-2. Enter the correct answer (adding the two numbers)
-3. The Answer button is now selectable.
-4. Select the “Answer” button.
-5. Pop-up window displays with text “That's right! Try another one.”
-6. Pop-Up window is closed
-7. New numbers are presented for a new challenge.
-8. The answer field has been cleared
-9. The Answer button is no longer enabled.
+Test Plan
 
+E2E Test.  HAPPY PATH:
 
-Improvements to the Happy Path
---add screen shots showing the value being entered
+Test Setup:
+  Follow instructions in the JHH Project Notes to setup system for testing:
+    Includes:
+    --Installing required dependencies
+    --Instructions to open the application and testing tools
 
-Additional Functional Tests – that can be incorporated into an E2E automation workflow:
---Verify that every number character can be entered, including the decimal point enabling the Answer button to be selectable. (0,2,3,4,5,6,7,8,9, “.”)
---Verify only real(?) numbers can be entered into the answer field
-      E.G.  99999999, 0, 0.9999999, +5555, -5555  
---Verify that if a character(s) that can be entered is not a number, the Answer button is not enabled (“e”, “2+4”, “5-3”)  [even if the math equation entered yields the correct answer)
---Verify that the characters entered can be cleared out by the user (either with the delete button or the backspace button)
-      This should be the case before the 'Answer' button is selected and when a wrong answer is submitted
---Verify that the popup showing the answer is correct or it is not correct auto closes within 7 seconds.
---Verify that the popup showing the answer is correct or it is not correct can be closed by clicking in it within 5 seconds of it appearing.
+HAPPY PATH Test steps:  Perform each step and verify no issue in presentation or functionality.  This will be automated with Cypress.
+  1. Open the Math Tutor Application.
+  2. Confirm that the “Answer” button at the bottom of the Math Challenge window is not selectable.  That when hovering over this button with your mouse a tooltip appears with “Please provide an answer” displayed.  
+  3. Provide the correct answer in the input field.  The sum of the 2 numbers displayed is to be entered.  Detailed steps:  Click into the field (note that the element display changes FROM light grey background and the word “Answer”centered in the field with a darker gray font – TO - the “Answer” text changes to a smaller blue font and is moved to the top of the fields, the grey background is darker and there is a blue line at the bottom border).  A flashing cursor appears. Enter in the correct vale of the 2 numbers summed together.
+  4. Confirm that the Answer button is now selectable (it is selectable as soon as the first character is entered into the Answer field).  The button changes to blue background with white font.  Hovering over the button the mouse pointer changes to the hand with pointing finger icon.
+  5. Click on the “Answer” button.
+  6. Confirm that Immediately after clicking on the “Answer” button, a Pop-up window displays at the top right of the screen with text “That's right! Try another one.” displayed. This confirmation popup has green background and white font.  There is a 'check' symbol preceding the text.
+  7. Confirm that the Pop-Up window is closes/is no longer visible after ~5 seconds of first appearing.
+  8. Confirm that new numbers are presented for a new challenge.
+  9. Confirm that the answer field has been cleared.  It is now back to its original look.
+  10. Confirm that he “Answer” button is no longer enabled.
 
-Non-Functional Tests:
---Compatibility:  Verify the happy path test functions across different browsers (Windows: Chrome, Edge, Firefox and Mac: Safari)
---508:  Check for section 508 accessibility.  E.G. ability to use only the keyboard.
---Stess:  Add an extremely lengthy value as the answer.
---Response time.  Measure how quickly the page responds to each click.
+  Future improvements to the happy path when automating:
+    --Add screen shots to be captured showing the value being entered and the popup window(s)
+    --Add e2e scenarios representing the user entering an incorrect value and then continuing with the Math Challenge be deleting their wrong answer and entering the correct answer to be confirmed.
+
+ADDITIONAL FUNCTIONAL TESTS – that can be incorporated into the E2E automation workflow:
+  --Verify that every number character can be entered, including the decimal point enabling the “Answer” button to be selectable. (0,2,3,4,5,6,7,8,9, “.”)
+  --Verify a varied sampling of numbers can be entered into the answer field
+            E.G.  99999999, 0, 0.9999999, +5555, -5555
+  --Verify that if a character(s) that can be entered is not a number, the “Answer” button is not enabled (“e”, “2+4”, “5-3”)  [even if the math equation entered yields the correct answer – answer is 8 and entering 5+3 will not enable the “Answer” button]
+  --Verify that the characters entered can be cleared out by the user (either with the delete button or the backspace button)
+            This should be the case before the 'Answer' button is selected AND when a wrong answer is submitted.
+  --Verify that the popup showing the answer is correct or it is not correct auto closes within 7 seconds.
+  --Verify that the popup showing the answer is correct or it is not correct can be closed by clicking on the window within 5 seconds of it appearing.
+
+NON-FUNCTIONAL TESTS - to be added with Cypres as able, else run with other tools (for the 508 testing)
+  --Compatibility:  Verify the happy path test functions across different Operating Systems and browsers (Windows: Chrome, Edge, Firefox and Mac: Safari)
+  --508:  Check for section 508 accessibility.  E.G. Color contrast. Keyboard friendly. App can be zoomed into without content or functionality loss.
+  --Stess:  Add an extremely lengthy value as the answer.
+  --Response time.  Measure how quickly the page responds to each click.
+  --Resize the browser window to check on functionality is not hindered and that the pop-ups appear on the window after selecting the “Answer” button.
