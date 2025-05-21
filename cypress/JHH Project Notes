@@ -11,13 +11,13 @@ JHH's laptop:
   node -v	=	v.22.14.0  
   npm -v	=	10.9.2  
 
-To run this angular application on my local system:
-1. Verify Node.js is installed
+To open the MathTutorAppTo run this angular application on my local system - using Command Prompt:
+1. Verify Node.js is installed (Version 18.20.3 or higher)
 2. Install the Angular CLI
       npm install -g @angular/cli
 3. Clone the Git Repository
       git clone https://github.com/OneCause/math-tutor-app
-4. Navigate to the Project Folder
+4. Navigate to the Project Folder on my system where repo was saved to
       cd math-tutor-app
 5. Install the Project Dependencies
       npm install
@@ -26,10 +26,10 @@ To run this angular application on my local system:
 7. Open browser and go to:
       http://localhost:4200/   ===> will see the application!
 
-To open Cypress:
-From C:\Users\johnh\math-tutor-app>
+To open Cypress  - using Command Prompt:
+From C:\Users\johnh\math-tutor-app>  
 	  npx cypress open
-	This get cypress up ==> then get the browser up and running for E2E testing/dev 
+	This gets cypress up
 
 To open Visual Studio Code
 From C:\Users\johnh\math-tutor-app>
