@@ -34,7 +34,6 @@ describe('random math app', () => {
           .should('be.visible')
           .should('contain.text', "That's right");
 
-
         // Step 7: Verify the "That's right. Try another" window is closed after 6 seconds
         cy.get('#toast-container', { timeout: 6000 }).should('not.be.visible');
 
